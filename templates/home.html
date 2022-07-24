@@ -20,9 +20,15 @@
         <section class="section-topic">
             <h2 class="text-primary">Carbon Tracker</h2>
             <hr>
-            <div style="overflow: hidden; margin: 15px auto;">
+            <!-- <div style="overflow: hidden; margin: 15px auto;">
                 <iframe scrolling="no" src="https://coolclimate.org/calculator" style="border: 0px none; margin-left: 0px; height: 1500px; margin-top: -200px; width: 1000px;">
                 </iframe>
+            </div> -->
+
+            <div class="col-lg-4 mb-3">
+                <div class="ratio ratio-1x1">
+                    <div id="piechart"></div>
+                </div>
             </div>
         </section>
 
@@ -30,11 +36,6 @@
         <section class="section-topic">
             <h2 class="text-primary">Socials</h2>
             <hr>
-            <div class="col-lg-4 mb-3">
-                <div class="ratio ratio-1x1">
-                    <div id="piechart"></div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col">
                     <a class="twitter-timeline" href="https://twitter.com/_carbon1c_?ref_src=twsrc%5Etfw">
@@ -62,12 +63,14 @@
             {%- endif %}
             <hr>
             <div class="timezone">
-                <p class="lead">Asia/Taipei <span class="text-danger">{{ dtnow }}</span></p>
+                <p class="lead">Asia/Taipei <span class="text">{{ dtnow }}</span></p>
             </div>
         </section>
 {% endblock %}
 
 {%- block inner_js %}
+    <script scr="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
     <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/chart.js') }}?{{ nowid }}"></script>
+    
 {% endblock -%}
