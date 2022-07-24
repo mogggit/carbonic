@@ -3,9 +3,9 @@
 {%- set is_chap = 1 -%}
 {%- set is_public = 1 -%}
 {%- set has_code = 1 -%}
-{%- set html_title = 'Python Level 3' -%}
-{%- set en_title = 'Python Level ' -%}
-{%- set zh_title = 'Python 高級課程' -%}
+{%- set html_title = 'Carbonic' -%}
+{%- set en_title = 'Carbonic' -%}
+{%- set zh_title = '' -%}
 
 {%- block menu %}
                 <li class="nav-item"><a class="nav-link" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Gmail</a></li>
@@ -13,7 +13,7 @@
 {%- endblock %}
 
 {% block content %}
-        {%- if session['role_name'] in ('student', 'teacher') %}
+        {%- if session['role_name'] in ('user', 'admin') %}
         <div class="row section-course">
             <div class="col-lg-4">
                 <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-globe"></i> 動態網站開發</a>
