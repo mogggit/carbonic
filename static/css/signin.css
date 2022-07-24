@@ -9,7 +9,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", "Microsoft YaHei", Meiryo, "Meiryo UI", sans-serif;
+    font-family: "Charter", Helvetica, Arial, "Microsoft JhengHei", "Microsoft YaHei", Meiryo, "Meiryo UI", sans-serif;
     font-weight: 400;
 }
 
@@ -32,8 +32,8 @@ input[type="radio"]:checked+label {
 } 
 
 .logo {
-    height: 80px;
-    height: 80px;
+    height: 150px;
+    height: 150px;
 }
 
 .font-open-sans {
@@ -57,7 +57,7 @@ input[type="radio"]:checked+label {
 }
 
 .pyone-center {
-    color: #48a748;
+    color: #333333;
 }
 
 .command-post {
