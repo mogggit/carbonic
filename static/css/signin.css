@@ -61,6 +61,7 @@ input[type="radio"]:checked+label {
 
 .pyone-center {
     color: #333333;
+    font-weight: bold;
 }
 
 .command-post {
