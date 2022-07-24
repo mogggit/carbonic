@@ -36,11 +36,11 @@
                 {%- if is_home != 1 %}
                 <li class="nav-item"><a class="nav-link nav-home" target="_self" href="/home">Home</a></li>
                 {%- endif %}
-                {%- if session['role_name'] in ('student', 'teacher') %}
+                {%- if session['role_name'] in ('user', 'admin') %}
                 {%- block menu %}{% endblock %}
                 {%- endif %}
 
-                {%- if session['role_name'] in ('student', 'teacher') %}
+                {%- if session['role_name'] in ('user', 'admin') %}
                 {{ logout_link1|safe }}
                 {%- else %}
                 {{ logout_link2|safe }}
@@ -61,7 +61,7 @@
         <div class='scrolltop'>
             <div class='scroll icon'><i class="fas fa-2x fa-angle-up"></i></div>
         </div>
-        {%- if session['role_name'] in ('student', 'teacher') or is_user or is_guest %}
+        {%- if session['role_name'] in ('user', 'admin') or is_user or is_guest %}
         {% block content %}{% endblock %}
         {%- else %}
         <h2 class="text-danger">Restricted Access</h2>
@@ -86,7 +86,7 @@
     <script src="{{ url_for('static', filename='js/precode.js') }}?{{ nowid }}"></script>
     {%- endif %}
     <script src="{{ url_for('static', filename='js/shared.js') }}?{{ nowid }}"></script>
-    {%- if session['role_name'] in ('student', 'teacher') or is_user or is_guest %}
+    {%- if session['role_name'] in ('user', 'admin') or is_user or is_guest %}
     {%- block inner_js %}{% endblock %}
     {%- endif %}
 </body>
