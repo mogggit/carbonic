@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+    /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", "Microsoft YaHei", Meiryo, "Meiryo UI", sans-serif;
+    font-weight: 400;
+    color: #363636;
+    background: #f0f0f0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", "Microsoft YaHei", Meiryo, "Meiryo UI", sans-serif;
+    font-weight: 400;
+}
+
+p {
+    font-weight: 400;
+}
+
+form {
+    margin: 30px 0;
+}
+
+select {
+    margin-bottom: 25px;
+}
+
+/* 單選項目核取變色 */
+input[type="radio"]:checked+label {
+    color: #de1f5f;
+    font-weight: bold;
+} 
+
+.logo {
+    height: 80px;
+    height: 80px;
+}
+
+.font-open-sans {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-semi-bold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.texti-muted {
+    color: #ccc;
+}
+
+.pyone-center {
+    color: #48a748;
+}
+
+.command-post {
+    color: #287fc7;
+}
+
+.signin {
+    margin-top: 30px;
+}
+
+.content {
+    margin-left: 0;
+    text-align: center;
+}
+
+.content h1 {
+    margin-top: 10px;
+    font-size: 48px;
+}
+
+.content .texti-small {
+    font-size: 0.9em;
+}
+
+.content .lead {
+    font-size: 25px;
+}
+
+.content .lead .font-normal {
+    color: #444;
+}
+
+.links {
+    margin-top: 10px;
+}
+
+.links ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.links ul li {
+    list-style: none;
+    display: inline;
+    padding: 5px;
+}
+
+.links ul li:first-child {
+    margin-left: 0;
+}
+
+.links ul li:last-child {
+    margin-right: 0;
+}
+
+.links a {
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.links a i {
+    font-size: 18px;
+}
+
+.links a:hover {
+    color: #1b60b1;
+    text-decoration: none;
+}
+
+.form-check * {
+    cursor: pointer;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #444;
+    font-weight: normal;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+    .content h1 {
+        font-size: 40px;
+    }
+    .content .texti-small {
+        font-size: 0.9em;
+    }
+    .content .lead {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .logo {
+        margin: 20px auto;
+    }
+    .content h1 {
+        margin-bottom: 20px;
+    }
+    .links {
+        text-align: center;
+    }
+    .copyright {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .signin {
+        margin-top: 30px;
+    }
+    .content .texti-small {
+        font-size: 0.7em;
+        display: block;
+    }
+    .content .lead {
+        font-size: 16px;
+    }
+    .links ul li {
+        display: block;
+    }
+    .links ul li .icon-muted {
+        display: none;
+    }
+}

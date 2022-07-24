@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pyone Command Post">
+    <meta name="author" content="Pyone">
+    <title>碼寶程式教育中心</title>
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/simple.css') }}?{{ nowid }}">
+</head>
+
+<body class="error-page">
+    <div class="container">
+        <h1 class="error-title">404 錯誤</h1>
+        <h2 class="error-body">你要求存取的頁面不存在，請回首頁</h2>
+        <hr>
+        <p><a href="/home" class="home-link">首頁</a></p>
+    </div>
+</body>
+</html>

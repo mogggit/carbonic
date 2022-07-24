@@ -1,0 +1,80 @@
+{% extends 'base-login.html' %}
+{%- set page_title = '高級課程' -%}
+{%- set site_title = '碼寶程式教育中心' -%}
+
+{% block content %}
+        <div class="container text-center">
+            <div class="row">
+                <div class="offset-md-1 col-md-10">
+                    <img class="logo rounded" src="{{ url_for('static', filename='img/logo.png') }}" alt="Pyone Code School">
+                    <div class="content">
+                        <h1><small class="texti-small pyone-center">{{ site_title }}</small></h1>
+                        <h3><small class="texti-small">核心常訓 <span class="command-post">高級班</span> <span class="text-muted">(練習版)</span></small></h3>
+                        <div class="offset-lg-3 col-lg-6 offset-md-2 col-md-8">
+                            <form role="form" action="" method="post">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="radRole1">
+                                        <input class="form-check-input" type="radio" name="radRoles" id="radRole1" value="admin">管理員
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="radRole2">
+                                        <input class="form-check-input" type="radio" name="radRoles" id="radRole2" value="student" checked>學生
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="radRole3">
+                                        <input class="form-check-input" type="radio" name="radRoles" id="radRole3" value="teacher">教師
+                                    </label>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <select class="form-control form-control-lg" id="selRole" name="selRole">
+                                      <option value="student" selected>學生 (student)</option>
+                                      <option value="teacher">教師 (teacher)</option>
+                                      <option value="admin">管理員 (admin)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" id="txtPassphrase" placeholder="通行密碼" autofocus>
+                                    <input type="hidden" class="form-control form-control-lg" id="txtPassword" name="txtPassword" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    {%- if submit_result|length > 0 %}
+                                    <div class="alert alert-danger" role="alert">
+                                      {{ submit_result }}
+                                    </div>
+                                    {%- endif %}
+                                    <br>
+                                    <button type="submit" class="btn btn-lg btn-block btn-success" id="btnSubmit">登入</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block switch_link %}<li><a target="_blank" href="https://micropyone.github.io/"><i class="fas fa-sign-in-alt"></i> 中級專題</a></li>{% endblock %}
+
+{% block inner_js %}
+    <script type="text/javascript">
+        $('input[type=radio][id^="radRole"]').change(function() {
+            $('#selRole').val(this.value);
+            $('#txtPassphrase').focus();
+        });
+        $('#selRole').change(function() {
+            $('input[type=radio][id^="radRole"]').each(function() {
+                $(this).prop('checked', false);
+                if(this.value == $('#selRole').val()) {
+                    $(this).prop('checked', true);
+                    $('#txtPassphrase').focus();
+                }
+            });
+        });
+        $('#txtPassphrase').on('input', function (e) {
+            $('#txtPassword').val(sha256($('#txtPassphrase').val()));
+        });
+    </script>
+{% endblock %}

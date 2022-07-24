@@ -1,0 +1,46 @@
+body, input, button, select, textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", "Microsoft YaHei", "Meiryo UI", "Meiryo", sans-serif;
+}
+
+body.error-page {
+	background-color: #323232;
+}
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+}
+
+h1.error-title,
+h2.error-body {
+	font-weight: 400;
+	color: #d9a2a2;
+}
+
+h1 {
+	margin-top: 60px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+.error-info {
+	color: #d2d0d0;
+}
+
+hr {
+	height: 1px;
+	color: #eee;
+	background-color: #eee;
+	border: none;
+	margin: 30px 0;
+}
+
+a.home-link {
+	font-size: 18px;
+	color: #eee;
+	text-decoration: none;
+	border: solid 1px #eee;
+	padding: 8px 16px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Pyone Command Post">
+    <meta name="author" content="Pyone">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>{{ page_title }} | {{ site_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap4/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap4/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}?{{ nowid }}">
+    <link rel="canonical" href="https://pyone.tw/">
+</head>
+
+<body>
+    <div class="signin">
+        {% block content %}{% endblock %}
+        <div class="container text-center">
+            <div class="row">
+                <div class="offset-md-1 col-md-10 links">
+                    <ul>
+                        <li><a target="_blank" href="https://pyone.tw/"><i class="fas fa-globe fa-fw"></i> 碼寶官網</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/groups/pyoneclub/"><i class="fas fa-users fa-fw"></i> 課程社團</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/pyone.tw"><i class="fab fa-facebook fa-fw"></i> 粉絲專頁</a></li>
+                        {% block switch_link %}{% endblock %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-md-1 col-md-10 copyright">
+                    &copy; {{ cyear }} {{ site_title }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='bootstrap4/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap4/bootstrap.bundle.min.js') }}"></script>
+    <!-- https://github.com/emn178/js-sha256 -->
+    <script src="{{ url_for('static', filename='js/sha256.min.js') }}"></script>
+    {% block inner_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%- set is_home = 1 -%}
+{%- set is_chap = 1 -%}
+{%- set is_public = 1 -%}
+{%- set has_code = 1 -%}
+{%- set html_title = 'Python Level 3' -%}
+{%- set en_title = 'Python Level 3' -%}
+{%- set zh_title = 'Python 高級課程' -%}
+
+{%- block menu %}
+                <li class="nav-item"><a class="nav-link" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+{%- endblock %}
+
+{% block content %}
+        {%- if session['role_name'] in ('student', 'teacher') %}
+        <div class="row section-course">
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-globe"></i> 動態網站開發</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-building"></i> 高級專案平台</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-folder-open"></i> 資料開放平台</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-spider"></i> 網路爬蟲程式</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-database"></i> 雲端資料庫</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-file-code"></i> 進階檔案操作</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-file-globe"></i> Videos</a>
+            </div>
+        </div>
+        {%- endif %}
+        <hr>
+        <div class="timezone">
+            <p class="lead">Asia/Taipei <span class="text-danger">{{ dtnow }}</span></p>
+        </div>
+{% endblock %}
+
+{%- block inner_js %}
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+{% endblock -%}

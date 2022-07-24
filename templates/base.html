@@ -1,0 +1,93 @@
+{%- set site_title = '碼寶程式教育中心' -%}
+{%- if is_chap or is_asec -%}
+{%- set logout_link1 = '<li class="nav-item"><a class="nav-link" href="/logout">登出 <small>('+session['role_name']+')</small></a></li>' -%}
+{%- set logout_link2 = '<li class="nav-item"><a class="nav-link" href="/logout">登出 <small>('+session['account']+')</small></a></li>' -%}
+{%- endif -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Python Level 3 Project">
+    <meta name="author" content="Pyone Zhang">
+    <title>{{ html_title }} | {{ site_title }}</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap4/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap4/fontawesome.min.css') }}">
+    {%- if has_code %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/monokai-sublime.min.css') }}">
+    {%- endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?{{ nowid }}">
+    <link rel="canonical" href="https://pyone.tw/">
+    {%- block inner_css %}{% endblock %}
+</head>
+
+<body>
+    {%- if is_chap or is_asec %}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navbar-main">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#home-menu" aria-controls="home-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">Pyone</a>
+        <div class="collapse navbar-collapse" id="home-menu">
+            <ul class="navbar-nav mr-auto">
+                {%- if is_home != 1 %}
+                <li class="nav-item"><a class="nav-link nav-home" target="_self" href="/home">Home</a></li>
+                {%- endif %}
+                {%- if session['role_name'] in ('student', 'teacher') %}
+                {%- block menu %}{% endblock %}
+                {%- endif %}
+
+                {%- if session['role_name'] in ('student', 'teacher') %}
+                {{ logout_link1|safe }}
+                {%- else %}
+                {{ logout_link2|safe }}
+                {%- endif %}
+            </ul>
+        </div>
+    </nav>
+    {%- endif %}
+    <div class='thetop'></div>
+    <div id="home" class="jumbotron {% if jumbotron_class == NONE %}jumbotron-main{% else %}{{ jumbotron_class }}{% endif %}">
+        <div class="container">
+            <h1>{{ en_title }}</h1>
+            <p class="lead">{{ zh_title }}</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class='scrolltop'>
+            <div class='scroll icon'><i class="fas fa-2x fa-angle-up"></i></div>
+        </div>
+        {%- if session['role_name'] in ('student', 'teacher') or is_user or is_guest %}
+        {% block content %}{% endblock %}
+        {%- else %}
+        <h2 class="text-danger">無此課程存取權限</h2>
+        {%- endif %}
+        <hr class="footer-hr">
+
+        <footer>
+            <p>&copy; {{ cyear }} {{ site_title }}</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- SRI Hash Generator: https://www.srihash.org/ -->
+    <script src="{{ url_for('static', filename='bootstrap4/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap4/bootstrap.bundle.min.js') }}"></script>
+    <!-- https://github.com/CodeSeven/toastr -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js') }}"></script>
+    {%- if has_code %}
+    <script src="{{ url_for('static', filename='js/highlight.min.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{{ url_for('static', filename='js/clipboard.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/precode.js') }}?{{ nowid }}"></script>
+    {%- endif %}
+    <script src="{{ url_for('static', filename='js/shared.js') }}?{{ nowid }}"></script>
+    {%- if session['role_name'] in ('student', 'teacher') or is_user or is_guest %}
+    {%- block inner_js %}{% endblock %}
+    {%- endif %}
+</body>
+</html>
