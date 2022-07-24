@@ -46,8 +46,7 @@ def index():
         # 密碼與帳號相同
         dict_roles = {
               'admin': '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
-            'student': '264c8c381bf16c982a4e59b0dd4c6f7808c51a05f64c35db42cc78a2a72875bb',
-            'teacher': '1057a9604e04b274da5a4de0c8f4b4868d9b230989f8c8c6a28221143cc5a755',
+            'user': '264c8c381bf16c982a4e59b0dd4c6f7808c51a05f64c35db42cc78a2a72875bb',
         }
         if 'selRole' in request.form and 'txtPassword' in request.form:
             the_role = request.form.get('selRole')
@@ -57,9 +56,9 @@ def index():
                 session['account'] = the_role
                 return redirect(url_for('home'))
             elif the_role not in dict_roles:
-                submit_result = '登入失敗：身份識別錯誤'
+                submit_result = 'Faild to login: ID Error'
             else:
-                submit_result = '登入失敗：通行密碼錯誤'
+                submit_result = 'Faild to login: Wrong Password'
         else:
             return redirect(url_for('denied'))
     return render_template('login-home.html', submit_result=submit_result, cyear=cyear, nowid=nowid())
