@@ -1,15 +1,15 @@
-{%- set site_title = '碼寶程式教育中心' -%}
+{%- set site_title = 'Carbonic' -%}
 {%- if is_chap or is_asec -%}
-{%- set logout_link1 = '<li class="nav-item"><a class="nav-link" href="/logout">登出 <small>('+session['role_name']+')</small></a></li>' -%}
-{%- set logout_link2 = '<li class="nav-item"><a class="nav-link" href="/logout">登出 <small>('+session['account']+')</small></a></li>' -%}
+{%- set logout_link1 = '<li class="nav-item"><a class="nav-link" href="/logout">Logout <small>('+session['role_name']+')</small></a></li>' -%}
+{%- set logout_link2 = '<li class="nav-item"><a class="nav-link" href="/logout">Logout <small>('+session['account']+')</small></a></li>' -%}
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Python Level 3 Project">
-    <meta name="author" content="Pyone Zhang">
+    <meta name="description" content="Carbonic Uber Hackathon Project">
+    <meta name="author" content="Raymond's Pineapple">
     <title>{{ html_title }} | {{ site_title }}</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
@@ -30,7 +30,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#home-menu" aria-controls="home-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/">Pyone</a>
+        <a class="navbar-brand" href="/">Raymond's Pineapple</a>
         <div class="collapse navbar-collapse" id="home-menu">
             <ul class="navbar-nav mr-auto">
                 {%- if is_home != 1 %}
@@ -64,7 +64,7 @@
         {%- if session['role_name'] in ('student', 'teacher') or is_user or is_guest %}
         {% block content %}{% endblock %}
         {%- else %}
-        <h2 class="text-danger">無此課程存取權限</h2>
+        <h2 class="text-danger">Restricted Access</h2>
         {%- endif %}
         <hr class="footer-hr">
 
