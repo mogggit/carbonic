@@ -24,10 +24,25 @@
                 <iframe scrolling="no" src="https://coolclimate.org/calculator" style="border: 0px none; margin-left: 0px; height: 1500px; margin-top: -200px; width: 1000px;">
                 </iframe>
             </div> -->
-
-            <div class="col-lg-4 mb-3">
+            <div id="divheight">
                 <div class="ratio ratio-1x1">
                     <div id="piechart"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="form-group">
+                    <select class="form-control form-control-lg" id="addJourney" name="addJourney">
+                        <option value="" disabled selected>Transportation</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Minivan">Minivan</option>
+                        <option value="Truck">Truck</option>
+                        <option value="Van">Van</option>
+                        <option value="EV">EV</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Train">Train</option>
+                        <option value="Metro">Metro</option>
+                    </select>
                 </div>
             </div>
         </section>
@@ -69,8 +84,7 @@
 {% endblock %}
 
 {%- block inner_js %}
-    <script scr="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
     <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
-    
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
 {% endblock -%}
