@@ -65,24 +65,24 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="row section-course">
+                <div class="col-lg-4">
+                    <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-car"></i> Share Transportation Data</a>
+                </div>
+                <div class="col-lg-4">
+                    <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-shoe-prints"></i> Share Carbon Footprint</a>
+                </div>
+                <div class="col-lg-4">
+                    <a class="btn btn-lg btn-block btn-primary"><i class="fas fa-user-friends"></i> Chellenge Your Friends</a>
+                </div>
+            </div>
+            {%- endif %}
+            <hr>
+            <div class="timezone">
+                <p class="lead">Asia/Taipei <span class="text-danger">{{ dtnow }}</span></p>
+            </div>
         </section>
-        
-        <div class="row section-course">
-            <div class="col-lg-4">
-                <a class="btn btn-lg btn-block btn-primary"><i class="far fa-share-alt"></i> Share Transportation Data</a>
-            </div>
-            <div class="col-lg-4">
-                <a class="btn btn-lg btn-block btn-primary"><i class="far fa-shoe-prints"></i> Share Carbon Footprint</a>
-            </div>
-            <div class="col-lg-4">
-                <a class="btn btn-lg btn-block btn-primary"><i class="far fa-user-friends"></i> Chellenge Your Friends</a>
-            </div>
-        </div>
-        {%- endif %}
-        <hr>
-        <div class="timezone">
-            <p class="lead">Asia/Taipei <span class="text-danger">{{ dtnow }}</span></p>
-        </div>
 {% endblock %}
 
 {%- block inner_js %}
