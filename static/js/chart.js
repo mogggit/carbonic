@@ -21,3 +21,8 @@ function drawChart() {
 
     chart.draw(data, options);
 }
+
+// Data Picker Initialization
+$('.datepicker').datepicker({
+    inline: true
+  });

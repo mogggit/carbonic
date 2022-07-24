@@ -29,20 +29,49 @@
                     <div id="piechart"></div>
                 </div>
             </div>
-            <div class="col-lg-3 mb-3">
-                <div class="form-group">
-                    <select class="form-control form-control-lg" id="addJourney" name="addJourney">
-                        <option value="" disabled selected>Transportation</option>
-                        <option value="SUV">SUV</option>
-                        <option value="Sedan">Sedan</option>
-                        <option value="Minivan">Minivan</option>
-                        <option value="Truck">Truck</option>
-                        <option value="Van">Van</option>
-                        <option value="EV">EV</option>
-                        <option value="Bus">Bus</option>
-                        <option value="Train">Train</option>
-                        <option value="Metro">Metro</option>
-                    </select>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <h5 class="font-weight-normal">Transportation Type</h5>
+                </div>
+                <div class="col-lg-2 mb-3"></div>
+                <div class="col-lg-2 mb-3">
+                    <h5 class="font-weight-normal">Duration</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="form-group">
+                        <select class="form-control form-control-lg" id="addJourney" name="addJourney">
+                            <option value="" disabled selected>Select Type</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="Minivan">Minivan</option>
+                            <option value="Truck">Truck</option>
+                            <option value="Van">Van</option>
+                            <option value="EV">EV</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Train">Train</option>
+                            <option value="Metro">Metro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-3"></div>
+                <div class="col-lg-2 mb-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" id="txtLots" placeholder="Hours" onfocus="select();">
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" id="txtLots" placeholder="Minutes" onfocus="select();">
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-3">
+                    <div class="form-group">
+                        <button type="button" id="btnRecord" class="btn btn-lg btn-primary">Record</button>
+                    </div>
                 </div>
             </div>
         </section>
