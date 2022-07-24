@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Pyone Command Post">
-    <meta name="author" content="Pyone">
+    <meta name="author" content="Raymond's Pineapple">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
     <link rel="shortcut icon" href="/favicon.ico">
     <title>{{ page_title }} | {{ site_title }}</title>
@@ -17,11 +16,14 @@
 <body>
     <div class="signin">
         {% block content %}{% endblock %}
+        <br>
         <div class="container text-center">
             <div class="row">
                 <div class="offset-md-1 col-md-10 links">
                     <ul>
                         <li><a target="_blank" href="https://twitter.com/_carbon1c_"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/_carbon1c_/"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+                        <li><a target="_blank" href=""><i class="fas fa-envelope-open"></i> Email</a></li>
                         {% block switch_link %}{% endblock %}
                     </ul>
                 </div>
