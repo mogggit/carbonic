@@ -5,6 +5,9 @@ body {
     font-weight: 400;
     color: #363636;
     background: #f0f0f0;
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,6 +71,13 @@ input[type="radio"]:checked+label {
     margin-top: 30px;
 }
 
+.solid-bg {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 10px 10px 40px;
+}
+
 .content {
     margin-left: 0;
     text-align: center;
@@ -116,7 +126,7 @@ input[type="radio"]:checked+label {
 
 .links a {
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     font-weight: normal;
     text-decoration: none;
 }
@@ -137,7 +147,7 @@ input[type="radio"]:checked+label {
 .copyright {
     margin-top: 30px;
     font-size: 16px;
-    color: #444;
+    color: #ffffff;
     font-weight: normal;
 }
 
