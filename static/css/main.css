@@ -1,5 +1,5 @@
 body, button, html, input, select, textarea {
-    font-family: "Microsoft JhengHei";
+    font-family: "Helvetica";
 }
 
 section h3,
@@ -376,7 +376,7 @@ h5.exfor {
 }
 
 .texti-vital {
-    color: #cc4444;
+    color: #cb4343;
 }
 
 .texti-lg {
@@ -455,7 +455,8 @@ h5.exfor {
 }
 
 .timezone {
-    font-family: serif;
+    font-family: Helvetica;
+    font-size: 10px;
 }
 
 /* #toast-container 移除圖示 */
